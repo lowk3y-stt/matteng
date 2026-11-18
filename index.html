@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="css/style.css">
+<title>MattEng</title>
+<script>
+try {
+  var s = JSON.parse(localStorage.getItem('app:v1') || '{}').theme || 'auto';
+  var d = s === 'dark' || (s === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.dataset.theme = d ? 'dark' : 'light';
+} catch (e) {}
+</script>
+</head>
+<body>
+<div id="app">
+  <main id="view"></main>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
